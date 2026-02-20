@@ -21,7 +21,7 @@ The goal is to create a diagnostic app to see whether someone has a cold or alle
  
 Known Issues:
 blah, blah, blah, blah
-
+	
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -60,28 +60,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 }
 	function showResults(){
     // Calculate allergy percentage
-    var allergy_percent = Math.round((allergy_count / total_questions) * 100);
+    var allergy_percent = ((allergy_count / total_questions) * 100);
 	//calculate cold percentage
-    var cold_percent = Math.round((cold_count / total_questions) * 100);
+    var cold_percent = ((cold_count / total_questions) * 100);
+	//this is the test shown in the results pags 
+	var resultText = 
+	"Allergy Likelihood: " + allergy_percent + "%<br>" +
+	"Cold Likelihood: " + cold_percent + "%";
+	document.getElementsById("diagnosis").innerHTML = resultText;
 
-    if(allergy_count > cold_count){
-        document.getElementById("diagnosis").innerHTML =
-        "🌸 Allergy Likelihood: " + allergy_percent + "%<br>" +
-        "🤧 Cold Likelihood: " + cold_percent + "%<br><br>" +
-        "Your responses suggest allergies are more likely.";
-    }
-    else if(cold_count > allergy_count){
-        document.getElementById("diagnosis").innerHTML =
-        "🌸 Allergy Likelihood: " + allergy_percent + "%<br>" +
-        "🤧 Cold Likelihood: " + cold_percent + "%<br><br>" +
-        "Your responses suggest a cold is more likely.";
-    }
-    else{
-        document.getElementById("diagnosis").innerHTML =
-        "🌸 Allergy Likelihood: " + allergy_percent + "%<br>" +
-        "🤧 Cold Likelihood: " + cold_percent + "%<br><br>" +
-        "Your symptoms are evenly matched.";
-    }
 }
   </script>
 <style>	
