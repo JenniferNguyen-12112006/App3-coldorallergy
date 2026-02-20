@@ -38,30 +38,36 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>	
 		// This counts the allergy and code answers
         var allergy_count = 0;
+		//This counts the cold and code answers
         var cold_count = 0;
+		//Total number of diagnostic questions
+		var total_questions = 6;
 
+		//Resets both counters back to zero
 		function resetCounts(){
+	//Counts the allergy count and code answers
     allergy_count = 0;
+	//Counts the cold count and codes answers
     cold_count = 0;
 }
-
-		//This function adds 1 to the allergy count
-        function allergyAdd(){
-            allergy_count = allergy_count + 1;
-		alert(allergy_count);
-
-        }
-
-        function coldAdd(){
-            cold_count = cold_count + 1;
-        }
+		//Increases the allergy counter by 1
+		function allergyAdd(){
+    allergy_count++;
+}
+		//Increases the cold counter by 1
+		function coldAdd(){
+    cold_count++;
+}
+	//calculate allergy percentage
 	function showResults(){
     if(allergy_count > cold_count){
         document.getElementById("diagnosis").innerHTML = "You may be experiencing allergies.";
     }
+	//calculate cold percentage
     else if(cold_count > allergy_count){
         document.getElementById("diagnosis").innerHTML = "You may have a cold.";
     }
+	//if both conditions have equal answers
     else{
         document.getElementById("diagnosis").innerHTML = "Your symptoms are unclear. Monitor them carefully.";
     }
