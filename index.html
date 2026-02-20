@@ -41,7 +41,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		//This counts the cold and code answers
         var cold_count = 0;
 		//Total number of diagnostic questions
-		var total_questions = 6;
+		var total_questions = 7;
 
 		//Resets both counters back to zero
 		function resetCounts(){
@@ -190,8 +190,22 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div class="w3-container">
 		<p>Content of page 6 goes here.</p>
 		<p>Is your mucus a thick, yellow color?</p>    
-	<a href="#results"onclick="coldAdd();showResults();"class="w3-btn w3-black"> Yes</a><!-- Button for yes, adds to cold-->
-    <a href="#results"onclick="allergyAdd();showResults();"class="w3-btn w3-black">No</a><!-- Button for no, adds to allergy-->
+	<a href="#seven"onclick="coldAdd();showResults();"class="w3-btn w3-black"> Yes</a><!-- Button for yes, adds to cold-->
+    <a href="#seven"onclick="allergyAdd();showResults();"class="w3-btn w3-black">No</a><!-- Button for no, adds to allergy-->
+ 	</div><!-- /content -->
+</div>
+
+	<!-- Question 7 Page-->
+<div class="page" id="seven">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 7</h1>
+	</div>
+	
+	<div class="w3-container">
+		<p>Content of page 7 goes here.</p>
+		<p>Are you sneezing in rapid bursts?</p>    
+	<a href="#results"onclick="allergyAdd();showResults();"class="w3-btn w3-black"> Yes</a><!-- Button for yes, adds to allergy-->
+    <a href="#results"onclick="coldAdd();showResults();"class="w3-btn w3-black">No</a><!-- Button for no, adds to cold-->
  	</div><!-- /content -->
 </div>
 
