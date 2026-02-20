@@ -34,15 +34,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
 
-function resetCounts(){
-    allergy_count = 0;
-    cold_count = 0;
-}
+
 <script>	
 		// This counts the allergy and code answers
         var allergy_count = 0;
         var cold_count = 0;
 
+		function resetCounts(){
+    allergy_count = 0;
+    cold_count = 0;
+}
 
 		//This function adds 1 to the allergy count
         function allergyAdd(){
@@ -128,8 +129,8 @@ function resetCounts(){
 	<div id="content" class="w3-container">
 		<p>Content of page 2 goes here.</p>
 			<p>Do you have a fever?</p>    
-	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-blue">Yes</a><!-- Button for yes, adds to cold-->
-         	<a href="#three"  onclick="coldAdd();" class="w3-btn w3-blue">No</a><!-- Button for no, adds to allergy-->
+	<a href="#three"  onclick="coldyAdd();" class="w3-btn w3-blue">Yes</a><!-- Button for yes, adds to cold-->
+         	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-blue">No</a><!-- Button for no, adds to allergy-->
  </div><!-- /content -->
 	</div>
 </div>	
@@ -143,8 +144,8 @@ function resetCounts(){
 	<div id="content" class="w3-container">
 		<p>Content of page 3 goes here.</p>
 		<p>Do you have a sore throat?</p>    
-	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-orange">Yes</a><!-- Button for yes, adds to cold-->
-         	<a href="#four"  onclick="coldAdd();" class="w3-btn w3-orange"> No</a><!-- Button for no, adds to allergy-->
+	<a href="#four"  onclick="coldAdd();" class="w3-btn w3-orange">Yes</a><!-- Button for yes, adds to cold-->
+         	<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-orange"> No</a><!-- Button for no, adds to allergy-->
  </div><!-- /content -->
 	</div>
 </div>	
@@ -188,8 +189,8 @@ function resetCounts(){
 	<div id="content" class="w3-container">
 		<p>Content of page 6 goes here.</p>
 		<p>Is your mucus a thick, yellow color?</p>    
-	<a href="#results"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a><!-- Button for yes, adds to cold-->
-         	<a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a><!-- Button for no, adds to allergy-->
+	<a href="#results"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a><!-- Button for yes, adds to cold-->
+         	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black">No</a><!-- Button for no, adds to allergy-->
  </div><!-- /content -->
 	</div>
 </div>	
@@ -201,8 +202,8 @@ function resetCounts(){
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>id="diagnosis"</p>
-		<a href="#results" onclick="showResults();" class="w3-btn w3-red">See My Results</a>
+		<p id="diagnosis"></p>
+
 	
  </div><!-- /content -->
 	</div>
