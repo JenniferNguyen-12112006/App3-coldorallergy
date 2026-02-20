@@ -58,18 +58,29 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		function coldAdd(){
     cold_count++;
 }
-	//calculate allergy percentage
 	function showResults(){
-    if(allergy_count > cold_count){
-        document.getElementById("diagnosis").innerHTML = "You may be experiencing allergies.";
-    }
+    // Calculate allergy percentage
+    var allergy_percent = Math.round((allergy_count / total_questions) * 100);
 	//calculate cold percentage
-    else if(cold_count > allergy_count){
-        document.getElementById("diagnosis").innerHTML = "You may have a cold.";
+    var cold_percent = Math.round((cold_count / total_questions) * 100);
+
+    if(allergy_count > cold_count){
+        document.getElementById("diagnosis").innerHTML =
+        "🌸 Allergy Likelihood: " + allergy_percent + "%<br>" +
+        "🤧 Cold Likelihood: " + cold_percent + "%<br><br>" +
+        "Your responses suggest allergies are more likely.";
     }
-	//if both conditions have equal answers
+    else if(cold_count > allergy_count){
+        document.getElementById("diagnosis").innerHTML =
+        "🌸 Allergy Likelihood: " + allergy_percent + "%<br>" +
+        "🤧 Cold Likelihood: " + cold_percent + "%<br><br>" +
+        "Your responses suggest a cold is more likely.";
+    }
     else{
-        document.getElementById("diagnosis").innerHTML = "Your symptoms are unclear. Monitor them carefully.";
+        document.getElementById("diagnosis").innerHTML =
+        "🌸 Allergy Likelihood: " + allergy_percent + "%<br>" +
+        "🤧 Cold Likelihood: " + cold_percent + "%<br><br>" +
+        "Your symptoms are evenly matched.";
     }
 }
   </script>
@@ -135,7 +146,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="content" class="w3-container">
 		<p>Content of page 2 goes here.</p>
 			<p>Do you have a fever?</p>    
-	<a href="#three"  onclick="coldyAdd();" class="w3-btn w3-blue">Yes</a><!-- Button for yes, adds to cold-->
+	<a href="#three"  onclick="coldAdd();" class="w3-btn w3-blue">Yes</a><!-- Button for yes, adds to cold-->
          	<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-blue">No</a><!-- Button for no, adds to allergy-->
  </div><!-- /content -->
 	</div>
@@ -195,8 +206,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="content" class="w3-container">
 		<p>Content of page 6 goes here.</p>
 		<p>Is your mucus a thick, yellow color?</p>    
-	<a href="#results"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a><!-- Button for yes, adds to cold-->
-         	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black">No</a><!-- Button for no, adds to allergy-->
+	<a href="#results"  onclick="coldAdd();" showResults();" class="w3-btn w3-black"> Yes</a><!-- Button for yes, adds to cold-->
+         	<a href="#two"  onclick="allergyAdd();" showResults();" class="w3-btn w3-black">No</a><!-- Button for no, adds to allergy-->
  </div><!-- /content -->
 	</div>
 </div>	
